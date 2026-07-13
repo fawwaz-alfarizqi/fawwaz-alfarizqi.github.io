@@ -4,6 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Halo, Aku Fawwaz!</title>
+<meta name="description" content="Website pribadi Fawwaz Alfarizqi Mukti Wibowo: koleksi favorit, kemampuan, galeri karya, dan cerita kecil bertema luar angkasa.">
+<meta name="keywords" content="Fawwaz, Fawwaz Alfarizqi, website anak, luar angkasa, planet, kipas, ABC Lore, trilingual school">
+<meta name="author" content="Fawwaz Alfarizqi Mukti Wibowo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fawwaz-alfarizqi.github.io/">
+<link rel="alternate" hreflang="id" href="https://fawwaz-alfarizqi.github.io/#id">
+<link rel="alternate" hreflang="en" href="https://fawwaz-alfarizqi.github.io/#en">
+<link rel="alternate" hreflang="zh-CN" href="https://fawwaz-alfarizqi.github.io/#zh">
+<link rel="alternate" hreflang="x-default" href="https://fawwaz-alfarizqi.github.io/">
+<link rel="icon" type="image/svg+xml" href="assets/icons/fan.svg">
+<link rel="shortcut icon" type="image/svg+xml" href="assets/icons/fan.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halo, Aku Fawwaz!">
+<meta property="og:url" content="https://fawwaz-alfarizqi.github.io/">
+<meta property="og:title" content="Halo, Aku Fawwaz!">
+<meta property="og:description" content="Website pribadi Fawwaz Alfarizqi Mukti Wibowo: koleksi favorit, kemampuan, galeri karya, dan cerita kecil bertema luar angkasa.">
+<meta property="og:image" content="https://fawwaz-alfarizqi.github.io/assets/foto.webp">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Halo, Aku Fawwaz!">
+<meta name="twitter:description" content="Website pribadi Fawwaz Alfarizqi Mukti Wibowo: koleksi favorit, kemampuan, galeri karya, dan cerita kecil bertema luar angkasa.">
+<meta name="twitter:image" content="https://fawwaz-alfarizqi.github.io/assets/foto.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
@@ -1329,10 +1353,44 @@
   const translatable = document.querySelectorAll("[data-i18n]");
   const hero = document.querySelector(".hero");
   const floaters = document.querySelectorAll(".float-shape");
+  const seo = {
+    id: {
+      title:"Halo, Aku Fawwaz!",
+      description:"Website pribadi Fawwaz Alfarizqi Mukti Wibowo: koleksi favorit, kemampuan, galeri karya, dan cerita kecil bertema luar angkasa.",
+      keywords:"Fawwaz, Fawwaz Alfarizqi, website anak, luar angkasa, planet, kipas, ABC Lore, sekolah tiga bahasa",
+      locale:"id_ID"
+    },
+    en: {
+      title:"Hi, I'm Fawwaz!",
+      description:"The personal website of Fawwaz Alfarizqi Mukti Wibowo, featuring favorite collections, skills, artwork, and a playful outer-space story.",
+      keywords:"Fawwaz, Fawwaz Alfarizqi, kids website, outer space, planets, fan, ABC Lore, trilingual school",
+      locale:"en_US"
+    },
+    zh: {
+      title:"你好，我是 Fawwaz！",
+      description:"Fawwaz Alfarizqi Mukti Wibowo 的个人网站，展示他喜欢的收藏、厉害本领、作品画廊和有趣的太空故事。",
+      keywords:"Fawwaz, Fawwaz Alfarizqi, 儿童网站, 太空, 行星, 风扇, ABC Lore, 三语学校",
+      locale:"zh_CN"
+    }
+  };
+
+  function updateMeta(selector, value){
+    const tag = document.querySelector(selector);
+    if(tag) tag.setAttribute("content", value);
+  }
 
   function setLanguage(lang){
     const dictionary = translations[lang] || translations.id;
+    const seoData = seo[lang] || seo.id;
     document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+    document.title = seoData.title;
+    updateMeta('meta[name="description"]', seoData.description);
+    updateMeta('meta[name="keywords"]', seoData.keywords);
+    updateMeta('meta[property="og:title"]', seoData.title);
+    updateMeta('meta[property="og:description"]', seoData.description);
+    updateMeta('meta[property="og:locale"]', seoData.locale);
+    updateMeta('meta[name="twitter:title"]', seoData.title);
+    updateMeta('meta[name="twitter:description"]', seoData.description);
     translatable.forEach((item) => {
       const key = item.dataset.i18n;
       if(dictionary[key]){
