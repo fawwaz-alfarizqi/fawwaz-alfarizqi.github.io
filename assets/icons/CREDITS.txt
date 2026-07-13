@@ -1,0 +1,28 @@
+Ikon di folder ini (kecuali fan.svg) berasal dari proyek OpenMoji
+(https://openmoji.org), dilisensikan di bawah Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+
+Sumber: https://github.com/hfg-gmuend/openmoji
+Lisensi lengkap: https://creativecommons.org/licenses/by-sa/4.0/
+
+File yang dipakai:
+- rocket.svg      (1F680  - Rocket)
+- planet.svg      (1FA90  - Ringed Planet)
+- star-glow.svg   (1F31F  - Glowing Star)
+- star.svg        (2B50   - Star)
+- milkyway.svg    (1F30C  - Milky Way)
+- moon.svg        (1F319  - Crescent Moon)
+- earth.svg       (1F30D  - Globe Showing Europe-Africa)
+- ufo.svg         (1F6F8  - Flying Saucer)
+- sparkles.svg    (2728   - Sparkles)
+- telescope.svg   (1F52D  - Telescope)
+- satellite.svg   (1F6F0  - Satellite)
+- astronaut.svg   (1F9D1-200D-1F680 - Astronaut)
+- camera.svg      (1F4F7  - Camera)
+- cloud.svg       (2601   - Cloud)
+
+fan.svg dibuat sendiri (bukan dari OpenMoji), meniru gaya visual OpenMoji,
+karena belum ada emoji resmi untuk "kipas angin listrik" di Unicode.
+
+Wajib mencantumkan kredit ini jika situs dipublikasikan (sudah otomatis
+ditaruh di footer index.html).
